@@ -1,0 +1,1 @@
+## This is a place where I keep things I'm playing around lately, mostly for curiosity. 
