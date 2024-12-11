@@ -1,0 +1,1 @@
+## Playing around with a JS file uploader with a good performance, progress display and without any external lib
