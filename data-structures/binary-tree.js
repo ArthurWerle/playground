@@ -42,6 +42,39 @@ class BinaryTree {
       this.inOrderTraversal(node.right);
     }
   }
+
+  bfsTraversal() {
+    if (!this.root) return;
+
+    const queue = [this.root];
+    while (queue.length) {
+      const node = queue.shift();
+      console.log(node.value); 
+
+      if (node.left) queue.push(node.left);
+      if (node.right) queue.push(node.right);
+    }
+  }
+
+  levelOrderTraversal() {
+    if (!this.root) return;
+
+    const queue = [this.root];
+    while (queue.length) {
+      let levelSize = queue.length;
+      let levelNodes = [];
+
+      for (let i = 0; i < levelSize; i++) {
+        const node = queue.shift();
+        levelNodes.push(node.value); // Collect values for the current level
+
+        if (node.left) queue.push(node.left);
+        if (node.right) queue.push(node.right);
+      }
+
+      console.log(levelNodes.join(",")); // Print all nodes of this level
+    }
+  }
 }
   
 const tree = new BinaryTree();
