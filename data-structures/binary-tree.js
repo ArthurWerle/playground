@@ -75,6 +75,23 @@ class BinaryTree {
       console.log(levelNodes.join(",")); // Print all nodes of this level
     }
   }
+
+  returnInOrder(root) {
+    const result = [];
+    
+    function returnInOrderTraversal(node) {
+        if (node) {
+            returnInOrderTraversal(node.left);
+            
+            result.push(node.value);
+            
+            returnInOrderTraversal(node.right);
+        }
+    }
+    
+    returnInOrderTraversal(root);
+    return result;
+}
 }
   
 const tree = new BinaryTree();
